@@ -1,0 +1,25 @@
+{
+    "title:fr": "Découvrez les <strong>composants web</strong> !",
+    "title:en": "Discover <strong>web components</strong> !",
+    "title:es": "¡Descúbrelo <strong>componentes web</strong>!",
+    "title:ja": "<strong>web components</strong>を発見してください！",
+
+    "content:fr": "Les <strong>composants web</strong> permettent aux développeurs de créer des balises HTML personnalisées et réutilisables.",
+    "content:en": "<strong>Web Components</strong> are a set of features that provide a standard component model for the Web allowing for encapsulation and interoperability of individual HTML elements.",
+    "content:es": "Los <strong>componentes web</strong> son un conjunto de características que actualmente están siendo añadidas por el W3C a las especificaciones HTML y DOM de forma que permite la creación de widgets o componentes reutilizables en documentos y aplicaciones web.",
+    "content:ja": "<strong>Web Components</strong>（ウェブコンポーネンツ）はHTML要素をコンポーネント化する技術群の総称、またそれらを用いて作成されたコンポーネントである。",
+
+    "used-components:fr": {
+        "one": "Il y a <slot name=\"count\"></slot> web component sur cette page : <slot name=\"list\"></slot>",
+        "other": "Il y a <slot name=\"count\"></slot> web components sur cette page : <slot name=\"list\"></slot>"
+    },
+    "used-components:en": {
+        "one": "There is <slot name=\"count\"></slot> web component on this page : <slot name=\"list\"></slot>",
+        "other": "There is <slot name=\"count\"></slot> web components on this page : <slot name=\"list\"></slot>"
+    },
+    "used-components:es": {
+        "one": "Hay <slot name=\"count\"></slot> componente web en esta página : <slot name=\"list\"></slot>",
+        "other": "Hay <slot name=\"count\"></slot> componentes web en esta página : <slot name=\"list\"></slot>"
+    },
+    "used-components:ja": "このページには<slot name=\"count\"></slot>つのウェブコンポーネントがあります：<slot name=\"list\"></slot>"
+}

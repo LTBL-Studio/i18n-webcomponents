@@ -1,0 +1,28 @@
+{
+  "name": "i18n-webcomponents",
+  "version": "1.0.0",
+  "description": "Set of component for text internationalization",
+  "main": "dist/i18n-webcomponents.esm.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others \"http-server\" \"rollup -c -w\"",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webcomponents",
+    "i18n"
+  ],
+  "author": "LTBL <contact@ltbl.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "concurrently": "^7.6.0",
+    "http-server": "^14.1.1",
+    "rollup": "^3.20.2",
+    "tslib": "^2.5.0"
+  }
+}

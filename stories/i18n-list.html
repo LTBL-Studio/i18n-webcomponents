@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n-list Component</title>
+</head>
+
+<body lang="fr">
+    <i18n-list id="name-list"><span>Bob</span><span>Sully</span></i18n-list>
+
+    <nav>
+        <button id="add-name">+</button>
+        <button id="remove-name">-</button>
+    </nav>
+    <nav>
+        <select id="locale" value="fr">
+            <option value="fr" selected>French</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="cs-CZ">Czech</option>
+            <option value="ja-Jpan-JP">Japanese</option>
+        </select>
+    </nav>
+
+    <script type="module" src="/dist/i18n-webcomponents.esm.js"></script>
+    <script type="module">
+
+        import { faker } from "/node_modules/@faker-js/faker/dist/esm/index.mjs";
+        import { setCurrentLocale } from "/dist/i18n-webcomponents.esm.js"
+
+        document.getElementById("add-name").addEventListener("click", () => {
+            let el = document.createElement("span")
+            el.textContent = faker.name.firstName()
+            document.getElementById("name-list").appendChild(el)
+        })
+
+        document.getElementById("remove-name").addEventListener("click", () => {
+            let listEl = document.getElementById("name-list")
+            if (listEl.children.length > 0) {
+                listEl.lastElementChild.remove()
+            }
+        })
+
+        document.getElementById("locale").addEventListener("change", () => {
+            setCurrentLocale(document.getElementById("locale").value)
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n-date Component</title>
+</head>
+
+<body lang="fr">
+    
+    <time is="i18n-date" id="current-date"></time>
+
+    <nav>
+        <label for="date-style">Date Style</label>
+        <select id="date-style">
+            <option value="">None</option>
+            <option value="short">short</option>
+            <option value="medium" selected>medium</option>
+            <option value="long">long</option>
+            <option value="full">full</option>
+        </select><br />
+
+        <label for="time-style">Time Style</label>
+        <select id="time-style">
+            <option value="" selected>None</option>
+            <option value="short">short</option>
+            <option value="medium">medium</option>
+            <option value="long">long</option>
+            <option value="full">full</option>
+        </select>
+    </nav>
+    <nav>
+        <select id="locale">
+            <option value="fr" selected>French</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="cs-CZ">Czech</option>
+            <option value="ja-Jpan-JP-u-ca-japanses">Japanese</option>
+        </select>
+    </nav>
+
+    <script type="module" src="/dist/i18n-webcomponents.esm.js"></script>
+    <script type="module">
+
+        import { setCurrentLocale, getCurrentLocale } from "/dist/i18n-webcomponents.esm.js"
+
+        let dateEl = document.getElementById("current-date");
+
+        if (dateEl) {
+            setInterval(() => {
+                dateEl.dateTime = new Date().toISOString()
+            }, 500)
+        }
+
+        document.getElementById("locale").addEventListener("change", () => {
+            setCurrentLocale(document.getElementById("locale").value)
+        })
+
+        document.getElementById("date-style").addEventListener("change", () => {
+            document.getElementById("current-date").dateStyle = document.getElementById("date-style").value
+        })
+
+        document.getElementById("time-style").addEventListener("change", () => {
+            document.getElementById("current-date").timeStyle = document.getElementById("time-style").value
+        })
+
+        window.getCurrentLocale = getCurrentLocale
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="translations" href="./assets/i18n-string-locale.json" />
+    <title>i18n-string Component</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-weight: lighter;
+        }
+    </style>
+</head>
+
+<body lang="fr">
+
+    <h1><i18n-string key="title"></i18n-string></h1>
+    <p><i18n-string key="content"></i18n-string></p>
+    <p>
+        <i18n-string key="used-components" value="2">
+
+            <span id="component-count" slot="count">2</span>
+
+            <i18n-list list-type="conjunction" id="component-list" slot="list">
+                <code>i18n-string</code>
+                <code>i18n-list</code>
+            </i18n-list>
+
+        </i18n-string>
+    </p>
+
+    <nav>
+        <select id="locale" value="fr">
+            <option value="fr" selected>French</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="ja-Jpan-JP">Japanese</option>
+        </select>
+    </nav>
+
+    <script type="module" src="/dist/i18n-webcomponents.esm.js"></script>
+    <script type="module">
+        import { setCurrentLocale } from "/dist/i18n-webcomponents.esm.js"
+
+        document.getElementById("locale").addEventListener("change", () => {
+            setCurrentLocale(document.getElementById("locale").value)
+        })
+    </script>
+</body>
+
+</html>
